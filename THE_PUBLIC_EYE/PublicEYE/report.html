@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PublicEye - Report</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<body>
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+        <a href="index.html">
+            <img src="Images/logo.png" height="40">
+        </a>
+
+        <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="report.html">Report Issue</a>
+            <a href="track.html">Track Complaint</a>
+            <button class="admin-btn" onclick="openAdminPopup()">
+                <i class="fa fa-user"></i> Admin
+            </button>
+        </nav>
+    </header>
+
+    <section>
+
+        <h1 class="header1">Report Civic Issue</h1>
+
+        <p class="p1">
+            Submit a complaint about problems like potholes, garbage, water leakage, or broken streetlights.
+        </p>
+
+        <!-- 🔥 FORM -->
+        <form class="formreport" id="reportForm">
+
+            <!-- PHOTO -->
+            <h3 class="h3report">1. Upload Photo of Issue</h3>
+            <input type="file" name="photo" accept="image/*" capture="environment" id="photo" required>
+
+            <br><br>
+
+            <!-- ADDRESS -->
+            <h3 class="h3report">2. Enter Address</h3>
+            <input type="text" name="title" placeholder="Enter issue address" required>
+
+            <br><br>
+
+            <!-- LOCATION -->
+            <h3 class="h3report">3. Select Location</h3>
+            <button type="button" onclick="getLocation()">Use My Current Location</button>
+
+            <p id="location"></p>
+
+            <!-- 🔥 added name -->
+            <input type="hidden" id="latitude" name="latitude">
+            <input type="hidden" id="longitude" name="longitude">
+
+            <br>
+
+            <!-- CATEGORY -->
+            <h3 class="h3report">4. Choose Category</h3>
+            <!-- 🔥 added name -->
+            <select name="category" required>
+                <option value="" disabled selected>Select Issue Category</option>
+                <option>Garbage</option>
+                <option>Pothole</option>
+                <option>Broken Streetlight</option>
+                <option>Water Leakage</option>
+                <option>Road Damage</option>
+                <option>Other</option>
+            </select>
+
+            <br><br>
+
+            <!-- DESCRIPTION -->
+            <h3 class="h3report">5. Describe the Issue</h3>
+            <textarea name="description" rows="4" placeholder="Describe the problem..." required></textarea>
+
+            <br><br>
+
+            <!-- USER -->
+            <h3 class="h3report">6. Your Details</h3>
+
+            <!-- 🔥 added name -->
+            <input type="text" name="username" placeholder="Your Name" required>
+
+            <br><br>
+
+            <!-- 🔥 added name -->
+            <input type="tel" name="phone" placeholder="Phone Number" id="phone" required pattern="[0-9]{10}">
+
+            <br><br>
+
+            <!-- ANONYMOUS -->
+            <label>
+                <input type="checkbox" name="anonymous">
+                Hide my identity from public
+            </label>
+
+            <br><br>
+
+            <!-- SUBMIT -->
+            <button type="submit">Submit Complaint</button>
+
+        </form>
+
+    </section>
+
+    <script src="script.js"></script>
+
+    <!-- OTP POPUP -->
+    <div id="otpPopup" class="popup">
+        <div class="popup-box">
+
+            <span class="close-btn" onclick="closePopup('otpPopup')">&times;</span>
+
+            <h3>Login with Phone</h3>
+
+            <input type="text" id="popupPhone" placeholder="Enter phone number">
+
+            <button onclick="sendOTP()">Send OTP</button>
+
+            <div id="otpSection" style="display:none;">
+                <input type="text" id="otp" placeholder="Enter OTP">
+                <button onclick="verifyOTP()">Verify</button>
+            </div>
+
+        </div>
+    </div>
+
+    <div id="successBox" class="success-box" style="display:none;">
+        <h3>Complaint Submitted Successfully ✅</h3>
+        <p>Your Complaint ID:</p>
+        <h2 id="complaintID"></h2>
+        <p>Use this ID to track your complaint.</p>
+    </div>
+
+    <!-- ADMIN POPUP -->
+    <div id="adminPopup" class="popup">
+        <div class="popup-box">
+
+            <span class="close-btn" onclick="closePopup('adminPopup')">&times;</span>
+
+            <h3>Admin Login</h3>
+
+            <input type="text" id="adminUser" placeholder="Username">
+            <input type="password" id="adminPass" placeholder="Password">
+
+            <button onclick="loginAdmin()">Login</button>
+
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <p>© 2026 PublicEye</p>
+
+        <div class="footer-links">
+            <a href="#">Contact</a>
+            <a href="#">Terms</a>
+            <a href="#">Privacy</a>
+        </div>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PublicEye - Track Complaint</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+        <a href="index.html">
+            <img src="Images/logo.png" height="40">
+        </a>
+
+        <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="report.html">Report Issue</a>
+            <a href="track.html">Track Complaint</a>
+            <button class="admin-btn" onclick="openAdminPopup()">
+                <i class="fa fa-user"></i> Admin
+            </button>
+        </nav>
+    </header>
+
+    <section>
+
+        <h1 class="header1">Track Your Complaint</h1>
+
+        <p class="p1">
+            Enter your Complaint ID to check the current status of your reported issue.
+        </p>
+
+        <!-- 🔥 CONNECTED FORM -->
+        <form onsubmit="trackComplaint(); return false;">
+
+            <label>Complaint ID</label>
+            <br><br>
+
+            <!-- 🔥 Added ID -->
+            <input type="text" id="trackID" placeholder="Enter Complaint ID (Example: PE-1024)" required>
+
+            <br><br>
+
+            <button type="submit">Track Complaint</button>
+
+        </form>
+
+    </section>
+
+    <!-- 🔥 RESULT CARD (INITIALY HIDDEN) -->
+    <section class="complaint-card" id="resultCard" style="display:none;">
+
+        <header class="card-header">
+            <h2>Complaint Status</h2>
+            <span class="status-badge" id="statusBadge"></span>
+        </header>
+
+        <div class="card-body">
+
+            <div class="row">
+                <span class="label">Complaint ID</span>
+                <span class="value" id="cid"></span>
+            </div>
+
+            <div class="row">
+                <span class="label">Title</span>
+                <span class="value" id="title"></span>
+            </div>
+
+            <div class="row">
+                <span class="label">Description</span>
+                <span class="value" id="description"></span>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ADMIN LOGIN POPUP -->
+    <div id="adminPopup" class="popup">
+        <div class="popup-box">
+
+            <span class="close-btn" onclick="closePopup('adminPopup')">&times;</span>
+
+            <h3>Admin Login</h3>
+
+            <input type="text" id="adminUser" placeholder="Username">
+            <input type="password" id="adminPass" placeholder="Password">
+
+            <button onclick="loginAdmin()">Login</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <p>© 2026 PublicEye</p>
+
+        <div class="footer-links">
+            <a href="#">Contact</a>
+            <a href="#">Terms</a>
+            <a href="#">Privacy</a>
+        </div>
+    </footer>
+
+</body>
+</html>

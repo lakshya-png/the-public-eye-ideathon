@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PublicEye - Admin Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<body>
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+        <a href="index.html">
+            <img src="Images/logo.png" height="40">
+        </a>
+
+        <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="report.html">Report Issue</a>
+            <a href="track.html">Track Complaint</a>
+            <button class="admin-btn" onclick="openAdminPopup()">
+                <i class="fa fa-user"></i> Admin
+            </button>
+        </nav>
+    </header>
+
+    <section>
+        <h1 class="header1">Admin Dashboard</h1>
+        <p class="p1">Manage and monitor all reported civic issues.</p>
+    </section>
+
+    <!-- REAL TABLE -->
+    <div class="table-container">
+        <div style="margin-bottom: 20px;">
+            <button id="activeBtn" class="filter-btn" onclick="loadActive()">Active Complaints</button>
+            <button id="resolvedBtn" class="filter-btn" onclick="loadResolved()">Resolved Complaints</button>
+        </div>
+
+
+        <table border="1" cellpadding="10" id="complaintTable">
+
+            <thead>
+                <tr>
+                    <th>Complaint ID</th>
+                    <th>Address</th>
+                    <th>Category</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+
+            <tbody id="tableBody">
+                <!-- Data will come from backend -->
+            </tbody>
+
+        </table>
+
+    </div>
+
+    <!-- ADMIN LOGIN POPUP -->
+    <div id="adminPopup" class="popup">
+        <div class="popup-box">
+
+            <span class="close-btn" onclick="closePopup('adminPopup')">&times;</span>
+
+            <h3>Admin Login</h3>
+
+            <input type="text" id="adminUser" placeholder="Username">
+            <input type="password" id="adminPass" placeholder="Password">
+
+            <button onclick="loginAdmin()">Login</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+
+    <!-- 🔥 LOAD DATA AUTOMATICALLY -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            loadActive();
+        });
+    </script>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <p>© 2026 PublicEye</p>
+
+        <div class="footer-links">
+            <a href="#">Contact</a>
+            <a href="#">Terms</a>
+            <a href="#">Privacy</a>
+        </div>
+    </footer>
+
+</body>
+
+</html>

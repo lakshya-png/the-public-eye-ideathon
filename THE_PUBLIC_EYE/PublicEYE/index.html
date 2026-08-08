@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PublicEye - Home</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+
+<body>
+    <!-- NAVBAR -->
+    <header class="navbar">
+        <a href="index.html"> <img src="Images/logo.png" height="40"></a>
+
+        <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="report.html">Report Issue</a>
+            <a href="track.html">Track Complaint</a>
+            <button class="admin-btn" onclick="openAdminPopup()">
+                <i class="fa fa-user"></i> Admin
+            </button>
+        </nav>
+    </header>
+
+    <!--HERO SECTION-->
+    <section class="hero">
+        <div class="hero-box">
+            <h1>
+                Report Local Problems.<br>
+                Track Action. <br>
+                Improve Your City.
+            </h1>
+
+            <p>
+                PublicEye helps citizens report potholes, garbage, sewer blockage,
+                broken streetlights, and other civic issues quickly and transparently.
+            </p>
+
+            <div class="hero-buttons">
+                <a href="report.html"><button class="btn btn-orange">Report Issue</button></a>
+
+                <a href="track.html"><button class="btn btn-blue">Track Complaint</button></a>
+            </div>
+
+            <div class="hero-features">
+                <span><i class="fa fa-check"></i> OTP Verified</span> <br>
+                <span><i class="fa fa-check"></i> Anonymous Option</span> <br>
+                <span><i class="fa fa-check"></i> Location-Based Reporting</span>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- COMMON ISSUES-->
+    <section class="issues">
+        <h2>Common Civic Issues</h2>
+
+        <div class="issue-grid">
+
+            <div class="issue-card">
+                <img src="Images/potholes.png">
+                <h3>Potholes</h3>
+                <p>Report potholes obstructing roads</p>
+            </div>
+
+            <div class="issue-card">
+                <img src="Images/Sewer.png">
+                <h3>Sewer Problems</h3>
+                <p>Report drainage and blockage issues</p>
+            </div>
+
+            <div class="issue-card">
+                <img src="Images/Garbage.png">
+                <h3>Garbage Dump</h3>
+                <p>Report garbage and waste issues</p>
+            </div>
+
+            <div class="issue-card">
+                <img src="Images/Streetlight.png">
+                <h3>Broken Streetlights</h3>
+                <p>Report streetlight problems</p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- HOW IT WORKS -->
+      <section class="how">
+
+        <h2>How It Works</h2>
+
+        <div class="how-grid">
+
+            <div class="how-card">
+                <img src="Images/Capture.png" alt="Capture" height="100">
+                <h3>Report</h3>
+                <p>Upload photo, location and issue details.</p>
+            </div>
+
+            <div class="how-card">
+                <img src="Images/Authorised.png" alt="Authorised" height="100">
+                <h3>Authorities Review</h3>
+                <p>Officials review the report and start working on it.</p>
+            </div>
+
+            <div class="how-card">
+                <img src="Images/Verified.png" alt="Resolved" height="100">
+                <h3>Issue Resolved</h3>
+                <p>The problem gets fixed and you get notified.</p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- PUBLIC FEED SECTION -->
+<section class="feed">
+
+    <h2>Stay Updated with Public Issues</h2>
+
+    <div class="feed-grid">
+
+        <div class="feed-card">
+            <img src="Images/feed.png" alt="Feed" height="100">
+
+            <h3>Public Complaint Feed</h3>
+
+            <p>
+                View issues reported by people around you. Stay aware of problems in your city
+                and track ongoing civic improvements.
+            </p>
+
+            <a href="feed.html">
+                <button class="btn btn-blue">View Public Feed</button>
+            </a>
+        </div>
+
+    </div>
+
+</section>
+
+     <!-- ADMIN LOGIN POPUP -->
+    <div id="adminPopup" class="popup">
+        <div class="popup-box">
+
+            <span class="close-btn" onclick="closePopup('adminPopup')">&times;</span>
+            
+            <h3>Admin Login</h3>
+
+            <input type="text" id="adminUser" placeholder="Username">
+            <input type="password" id="adminPass" placeholder="Password">
+
+            <button onclick="loginAdmin()">Login</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+
+        <p>© 2026 PublicEye</p>
+
+        <div class="footer-links">
+            <a href="#">Contact</a>
+            <a href="#">Terms</a>
+            <a href="#">Privacy</a>
+        </div>
+
+    </footer>
+
+</body>
+
+</html>
