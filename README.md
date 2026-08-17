@@ -92,7 +92,7 @@ This project helped in improving knowledge of:
 - Full-stack application architecture
 - Team collaboration and project management
 
-## Team
+
 
 Developed as part of the **Aavishkar Innovation Event** at **ABES Institute of Technology (ABESIT), Ghaziabad**.
 
